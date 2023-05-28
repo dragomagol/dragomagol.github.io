@@ -1,5 +1,6 @@
 // src/components/Toolbar.js
 import {
+	RxSun,
 	RxMoon,
 	RxDividerVertical,
 	RxFile,
@@ -13,6 +14,8 @@ import {
 import { RiWifiLine } from 'react-icons/ri';
 
 import React, { useState, useEffect } from 'react';
+
+var darkMode = true;
 
 export const DateTime = () => {
 	const [date, setDate] = useState(new Date());
@@ -34,16 +37,32 @@ export const DateTime = () => {
 }
 
 export default function Toolbar() {
-	var button_class = "px-2 py-2 mr-3 rounded-md bg-gray-300 hover:bg-gray-400";
-	var icon_color = "#5A5A5A";
-	var icon_size = 35;
+	const [darkMode, setDarkMode] = useState([]);
+
+	function toggleDarkMode() {
+		setDarkMode(!darkMode);
+	}
+
+	const button_class = "px-2 py-2 mr-3 rounded-md bg-gray-300 hover:bg-gray-400";
+	const icon_color = "#5A5A5A";
+	const icon_size = 35;
+
+	var mode_button = <RxMoon color={icon_color} size={icon_size}/>;
+	if (darkMode) {
+		mode_button = <RxSun color={icon_color} size={icon_size}/>;
+	}
+
 	return (
 		<section id="urlbar">
 			<div className="py-[7px] h-[65px] w-full bg-gray-300">
 				<div className="flex flex-row">
-					<div className="px-2 py-2 ml-3 rounded-md bg-gray-400">
-						<RxMoon color={icon_color} size={icon_size}/>
+					<button onClick={() => { 
+						toggleDarkMode();
+					}}>
+					<div className="px-2 py-2 ml-3 rounded-md hover:bg-gray-400">
+						{mode_button}
 					</div>
+					</button>
 					<RxDividerVertical color="#AAAAAA" size="50px" />
 					<div className={button_class}>
 						<RxFile color={icon_color} size={icon_size}/>
@@ -61,9 +80,11 @@ export default function Toolbar() {
 							<RxLinkedinLogo color={icon_color} size={icon_size}/>
 						</div>
 					</a>
-					<div className={button_class}>
-						<RxEnvelopeClosed color={icon_color} size={icon_size}/>
-					</div>
+					<a href="mailto:">
+						<div className={button_class}>
+							<RxEnvelopeClosed color={icon_color} size={icon_size}/>
+						</div>
+					</a>
 					<div className="flex-grow"></div> {/* This is a spacer */}
 					<div className="flex flex-row py-[12px]">
 						<RxCaretUp color={icon_color} size={25}/>
