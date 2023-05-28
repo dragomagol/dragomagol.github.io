@@ -22,21 +22,10 @@ function App() {
 			<TabBar />
 			<URLBar />
 		</div>
-		<header className="App-header">
-			<img src={logo} className="App-logo" alt="logo" />
-			<p>
-				Edit <code>src/App.js</code> and save to reload.
-			</p>
-			<a
-			className="App-link"
-			href="https://reactjs.org"
-			target="_blank"
-			rel="noopener noreferrer"
-			>
-				Learn React
-			</a>
-	  	</header>
-		  <div style={{
+		<main className="mt-[100px] h-[100%] text-gray-400 bg-gray-900 grow-0 body-font">
+			<HomeTab />
+	  	</main>
+		<div style={{
 			position: 'fixed',
 			bottom: 0,
 			left: 0,

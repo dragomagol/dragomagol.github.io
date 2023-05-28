@@ -12,10 +12,12 @@ import {
 } from 'react-icons/rx';
 
 export default function URLBar() {
-	var icon_size = 30;
-	var icon_color = "#5A5A5A";
-	var icon_top_margin = 5;
-	var icon_horizontal_margin = 15;
+    const url = "https://www.google.com/";
+
+	const icon_size = 30;
+	const icon_color = "#5A5A5A";
+	const icon_top_margin = 5;
+	const icon_horizontal_margin = 15;
 	return (
 		<section id="urlbar">
 			<div className="h-[50px] w-full bg-gray-200">
@@ -56,7 +58,7 @@ export default function URLBar() {
 					<div className="flex flex-horizontal px-[5px] py-[5px] rounded-full bg-gray-300 w-full">
 						<RxGlobe color={icon_color} size={icon_size}/>
 						<div className="ml-[10px] text-gray-600">
-							URL goes here!
+							{url}
 						</div>
 						<div className="flex-grow"></div> {/* This is a spacer */}
 						<RxMagnifyingGlass color={icon_color} size={icon_size}/>
