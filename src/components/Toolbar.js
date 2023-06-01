@@ -15,8 +15,6 @@ import { RiWifiLine } from 'react-icons/ri';
 
 import React, { useState, useEffect } from 'react';
 
-var darkMode = true;
-
 export const DateTime = () => {
 	const [date, setDate] = useState(new Date());
 

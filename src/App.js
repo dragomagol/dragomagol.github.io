@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import TabBar from "./components/TabBar";
@@ -13,7 +12,11 @@ import ContactTab from "./components/ContactTab";
 function App() {
   return (
 	<div className="App">
-		<div style={{
+		<main className="mt-[100px] h-[100%] text-gray-400 bg-blue-950 body-font absolute">
+			{/* <HomeTab /> */}
+            <HistoryTab />
+	  	</main>
+        <div style={{
 			position: 'fixed',
 			top: 0,
 			left: 0,
@@ -22,9 +25,6 @@ function App() {
 			<TabBar />
 			<URLBar />
 		</div>
-		<main className="mt-[100px] h-[100%] text-gray-400 bg-gray-900 grow-0 body-font">
-			<HomeTab />
-	  	</main>
 		<div style={{
 			position: 'fixed',
 			bottom: 0,

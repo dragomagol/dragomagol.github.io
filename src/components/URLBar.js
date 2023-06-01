@@ -6,18 +6,32 @@ import {
 	RxHome,
 	RxGlobe,
 	RxStar,
+	RxStarFilled,
 	RxMagnifyingGlass,
 	RxAvatar,
 	RxMixerVertical
 } from 'react-icons/rx';
+import React, { useState } from 'react';
 
 export default function URLBar() {
+	const [starred, setStarred] = useState([]);
+
+	function toggleStarred() {
+		setStarred(!starred);
+	}
+
     const url = "https://www.google.com/";
 
 	const icon_size = 30;
 	const icon_color = "#5A5A5A";
 	const icon_top_margin = 5;
 	const icon_horizontal_margin = 15;
+
+    var starred_button = <RxStar color={icon_color} size={icon_size}/>;
+	if (starred) {
+		starred_button = <RxStarFilled color={icon_color} size={icon_size}/>;
+	}
+
 	return (
 		<section id="urlbar">
 			<div className="h-[50px] w-full bg-gray-200">
@@ -62,7 +76,11 @@ export default function URLBar() {
 						</div>
 						<div className="flex-grow"></div> {/* This is a spacer */}
 						<RxMagnifyingGlass color={icon_color} size={icon_size}/>
-						<RxStar color={icon_color} size={icon_size}/>
+                        <button onClick={() => { 
+						    toggleStarred();
+					    }}>
+						    {starred_button}
+                        </button>
 					</div>
 					<RxAvatar
 						style={{ 
