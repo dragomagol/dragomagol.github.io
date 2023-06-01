@@ -96,7 +96,7 @@ export default function HistoryTab() {
 						</div>
 						<div className="flex flex-row ml-4">
 							{ job.technologies.map((tech) => (
-								<div className="rounded-full text-sm mt-4 mr-2 py-1 px-2 bg-blue-900 text-blue-200">
+								<div className="rounded-full text-sm mt-4 mr-2 py-1 px-3 bg-blue-900 text-blue-200">
 									{tech}
 								</div>
 							)) }

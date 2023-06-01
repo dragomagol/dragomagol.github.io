@@ -28,11 +28,11 @@ export default function TabBar() {
 				</div>
 				<div className="flex flex-row">
 				{ tabs.map((tab) => (
-					<div className="rounded-lg mt-[20px] ml-2 h-[35px] w-[17%] text-gray-800 bg-gray-200 hover:bg-gray-300">
+					<button className="rounded-lg mt-[10px] ml-2 h-[35px] w-[17%] text-gray-800 bg-gray-300 hover:bg-gray-200">
 						<div className="text-left mt-1 ml-3">
 							{tab}
 						</div>
-					</div>
+					</button>
 				))}
 				</div>
 			</div>
