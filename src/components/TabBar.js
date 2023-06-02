@@ -45,7 +45,7 @@ export default function TabBar() {
 					<TabList className="flex flex-row">
 						{ Object.keys(tabs).map((tab) => (
 							<Tab 
-							className="px-10 pt-1 pb-2 rounded-t-lg mt-[14px] ml-4 bg-gray-200 hover:bg-gray-300"
+							className="px-10 pt-1 pb-2 rounded-t-lg outline-none mt-[14px] ml-4 bg-gray-200 hover:bg-gray-300"
 							selectedClassName="bg-gray-300"
 							>
 								{ tab }
