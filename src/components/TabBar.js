@@ -5,7 +5,22 @@ import {
 	RxCross2,
 } from 'react-icons/rx';
 
-var tabs = ["Home", "Skills", "Work History", "Projects", "Contact"];
+import HomeTab from "./HomeTab";
+import SkillsTab from "./SkillsTab";
+import HistoryTab from "./HistoryTab";
+import ProjectsTab from "./ProjectsTab";
+import ContactTab from "./ContactTab";
+
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
+var tabs = {
+	"Home": <HomeTab />, 
+	"Skills": <SkillsTab />, 
+	"Work History": <HistoryTab />,
+	"Projects": <ProjectsTab />,
+	"Contact": <ContactTab />
+};
 
 export default function TabBar() {
 	const icon_size = 20;
@@ -26,16 +41,24 @@ export default function TabBar() {
 						size={icon_size}
 					/>
 				</div>
-				<div className="flex flex-row">
-				{ tabs.map((tab) => (
-					<button className="rounded-lg mt-[10px] ml-2 h-[35px] w-[17%] text-gray-800 bg-gray-300 hover:bg-gray-200">
-						<div className="text-left mt-1 ml-3">
-							{tab}
-						</div>
-					</button>
-				))}
+				<Tabs>
+					<TabList className="flex flex-row">
+						{ Object.keys(tabs).map((tab) => (
+							<Tab 
+							className="px-10 pt-1 pb-2 rounded-t-lg mt-[14px] ml-4 bg-gray-200 hover:bg-gray-300"
+							selectedClassName="bg-gray-300"
+							>
+								{ tab }
+							</Tab>
+						))}
+					</TabList>
+					{ Object.keys(tabs).map((tab) => (
+						<TabPanel>
+							{ tabs[tab] }
+						</TabPanel>
+					))}
+				</Tabs>
 				</div>
-			</div>
 		</section>
 	);
 }

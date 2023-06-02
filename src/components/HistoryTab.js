@@ -75,56 +75,58 @@ const volunteer_data = [
 
 export default function HistoryTab() {
 	return (
-		<div className="w-[90%] m-auto">
-			<h1 className="my-6 text-4xl text-left font-mono text-gray-100 font-bold">
-				Work Experience
-			</h1>
-			{ work_data.map((job) => (
-				<div className="text-left grid grid-cols-4 my-10">
-					<div className="uppercase text-gray-500">
-						{job.start_date} — {job.end_date}
-					</div>
-					<div className="col-span-3">
-						<div className="text-lg text-gray-100 hover:text-gray-300">
-							<a href={job.company_url}>{job.title} @ {job.company}</a>
+		<main className="mt-[50px] overflow-auto min-h-screen flex flex-col text-gray-400 bg-blue-950 body-font absolute">
+			<div className="w-[90%] m-auto">
+				<h1 className="my-6 text-4xl text-left font-mono text-gray-100 font-bold">
+					Work Experience
+				</h1>
+				{ work_data.map((job) => (
+					<div className="text-left grid grid-cols-4 my-10">
+						<div className="uppercase text-gray-500">
+							{job.start_date} — {job.end_date}
 						</div>
-						<div className="text-sm text-gray-500 italic">
-							{job.location}
-						</div>
-						<div className="text-gray-400 ml-4">
-							{job.description}
-						</div>
-						<div className="flex flex-row ml-4">
-							{ job.technologies.map((tech) => (
-								<div className="rounded-full text-sm mt-4 mr-2 py-1 px-3 bg-blue-900 text-blue-200">
-									{tech}
-								</div>
-							)) }
-						</div>
-					</div>
-				</div>
-			))}
-			<h1 className="my-6 text-4xl text-left font-mono text-gray-100 font-bold">
-				Volunteering
-			</h1>
-			{ volunteer_data.map((position) => (
-				<div className="text-left grid grid-cols-4 my-10">
-					<div className="uppercase text-gray-500">
-						{position.start_date} — {position.end_date}
-					</div>
-					<div className="col-span-3">
-						<div className="text-lg text-gray-100 hover:text-gray-300">
-							<a href={position.company_url}>{position.title} @ {position.company}</a>
-						</div>
-						<div className="text-sm text-gray-500 italic">
-							{position.location}
-						</div>
-						<div className="text-gray-400 ml-4">
-							{position.description}
+						<div className="col-span-3">
+							<div className="text-lg text-gray-100">
+								<a className="hover:text-gray-300" href={job.company_url}>{job.title} @ {job.company}</a>
+							</div>
+							<div className="text-sm text-gray-500 italic">
+								{job.location}
+							</div>
+							<div className="text-gray-400 ml-4">
+								{job.description}
+							</div>
+							<div className="flex flex-row ml-4">
+								{ job.technologies.map((tech) => (
+									<div className="rounded-full text-sm mt-4 mr-2 py-1 px-3 bg-blue-900 text-blue-200">
+										{tech}
+									</div>
+								)) }
+							</div>
 						</div>
 					</div>
-				</div>
-			))}
-		</div>
+				))}
+				<h1 className="my-6 text-4xl text-left font-mono text-gray-100 font-bold">
+					Volunteering
+				</h1>
+				{ volunteer_data.map((position) => (
+					<div className="text-left grid grid-cols-4 my-10">
+						<div className="uppercase text-gray-500">
+							{position.start_date} — {position.end_date}
+						</div>
+						<div className="col-span-3">
+							<div className="text-lg text-gray-100">
+								<a className="hover:text-gray-300" href={position.company_url}>{position.title} @ {position.company}</a>
+							</div>
+							<div className="text-sm text-gray-500 italic">
+								{position.location}
+							</div>
+							<div className="text-gray-400 ml-4">
+								{position.description}
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</main>
 	);
 }
