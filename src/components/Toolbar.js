@@ -35,7 +35,7 @@ export const DateTime = () => {
 }
 
 export default function Toolbar() {
-	const [darkMode, setDarkMode] = useState([]);
+	const [darkMode, setDarkMode] = useState(true);
 
 	function toggleDarkMode() {
 		setDarkMode(!darkMode);

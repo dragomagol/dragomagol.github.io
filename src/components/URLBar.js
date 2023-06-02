@@ -14,7 +14,7 @@ import {
 import React, { useState } from 'react';
 
 export default function URLBar() {
-	const [starred, setStarred] = useState([]);
+	const [starred, setStarred] = useState(false);
 
 	function toggleStarred() {
 		setStarred(!starred);
